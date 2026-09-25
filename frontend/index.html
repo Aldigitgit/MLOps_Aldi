@@ -1,17 +1,491 @@
-<!doctype html>
-<html lang="id">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NovaVision Lab</title>
-  <style>body{font-family:system-ui;margin:0;background:#eef6ff;color:#153c5d}main{max-width:720px;margin:72px auto;padding:32px;background:white;border-radius:18px}.tag{color:#1478b8;font-weight:700}</style>
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Japan Tours — 10 Days Itinerary</title>
+<!-- Google Fonts: Inter & Outfit -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Outfit:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Font Awesome Icons -->
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Forms & Container Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Custom Config -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            charcoal: {
+              950: '#060608',
+              900: '#0d0d12',
+              850: '#111219',
+              800: '#181924',
+            },
+            accent: {
+              gold: '#eab308',
+              glow: '#fef08a'
+            }
+          },
+          backdropBlur: {
+            xs: '2px',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles for Atmosphere, Glassmorphism, and Japanese Aesthetic -->
+<style data-purpose="custom-decorations">
+    /* Subtle custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0d0d12;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #272736;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #3e3f54;
+    }
+
+    /* Japan watermarked large background typography */
+    .hero-japan-title {
+      letter-spacing: 0.18em;
+      text-shadow: 0 0 50px rgba(255, 255, 255, 0.25);
+    }
+
+    /* Glass card utility */
+    .glass-card {
+      background: rgba(18, 19, 28, 0.55);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card-hover:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.28);
+      background: rgba(24, 25, 38, 0.72);
+      box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Vertical timeline custom connector line */
+    .timeline-track {
+      background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.2) 100%);
+    }
+  </style>
 </head>
-<body>
-  <main>
-    <p class="tag">MLOps Lab · Frontend</p>
-    <h1>Halo dari GitHub Pages!</h1>
-    <p>Halaman ini dikirim otomatis oleh GitHub Actions.</p>
-    <p>Perubahan kode → commit → push → deploy.</p>
-  </main>
-</body>
-</html>
+<body class="bg-charcoal-950 text-slate-200 font-sans antialiased overflow-x-hidden selection:bg-amber-400 selection:text-black">
+<!-- BEGIN: Navigation -->
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md bg-charcoal-950/60 border-b border-white/10" data-purpose="site-header">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<!-- Logo brand -->
+<a class="flex items-center gap-3 group text-white tracking-widest uppercase font-semibold text-sm" href="#">
+<span class="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center text-white/90 group-hover:border-white transition-colors">
+<i class="fa-solid fa-globe text-xs"></i>
+</span>
+<span class="tracking-[0.22em] text-xs md:text-sm font-medium">JAPAN TOURS</span>
+</a>
+<!-- Center navigation links -->
+<nav class="hidden md:flex items-center space-x-10 text-xs tracking-wider uppercase font-medium text-slate-300">
+<a class="hover:text-white transition-colors duration-200" href="#about">About</a>
+<a class="hover:text-white transition-colors duration-200" href="#included">Included</a>
+<a class="hover:text-white transition-colors duration-200" href="#contact">Contacts</a>
+</nav>
+<!-- Right CTA button -->
+<div class="flex items-center gap-4">
+<a class="px-6 py-1.5 rounded-full border border-white/60 hover:bg-white hover:text-black transition-all duration-300 text-xs tracking-wider uppercase font-medium" href="#contact">
+          Book
+        </a>
+</div>
+</div>
+</header>
+<!-- END: Navigation -->
+<!-- BEGIN: FloatingSocialBar -->
+<!-- Fixed right-side micro social links matching design -->
+<aside aria-label="Social Media" class="fixed right-6 top-32 z-40 hidden lg:flex flex-col gap-4 text-white/60">
+<a class="w-8 h-8 rounded-full border border-white/20 hover:border-white hover:text-white flex items-center justify-center text-xs backdrop-blur-sm bg-black/20 transition-all" href="#" title="Instagram">
+<i class="fa-brands fa-instagram"></i>
+</a>
+<a class="w-8 h-8 rounded-full border border-white/20 hover:border-white hover:text-white flex items-center justify-center text-xs backdrop-blur-sm bg-black/20 transition-all" href="#" title="Telegram">
+<i class="fa-brands fa-telegram"></i>
+</a>
+<a class="w-8 h-8 rounded-full border border-white/20 hover:border-white hover:text-white flex items-center justify-center text-xs backdrop-blur-sm bg-black/20 transition-all" href="#" title="WhatsApp">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+</aside>
+<!-- END: FloatingSocialBar -->
+<main>
+<!-- BEGIN: HeroSection -->
+<section class="relative min-h-screen flex flex-col justify-between pt-24 pb-16 overflow-hidden" data-purpose="hero-banner">
+<!-- High-res background image: Mt. Fuji, sunrise haze, and sakura landscape -->
+<div class="absolute inset-0 z-0">
+<img alt="Scenic view of Japan, Mt. Fuji and cherry blossoms" class="w-full h-full object-cover object-center filter brightness-[0.78] contrast-[1.05]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEMWxkQwKqL7QPcY1tM5p7G7-_yFSt-xYtkjSCUgdd4hHT9GaWh4-LCsWKWQJQnx89RyHrtyiRk7WlU60suOzbtY1WAtnMcEfhcliOCh_mRdXd86v2b0UqcjzhccJ4kETbkYemqakY6Wvx1bf5MjMYqCRRtBun0f2zCAiSJZwqqDDLXWZ0rQ1DLola2Q8Pis8XvdnC80nYqln9QbCZevQVmWaKAsfdxSraUEyI35MHGnux-37ujtewQA"/>
+<!-- Atmospheric Vignettes & Overlays -->
+<div class="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-charcoal-950/20 to-charcoal-950/50"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-charcoal-950/60 via-transparent to-charcoal-950/40"></div>
+</div>
+<!-- Center Title: Massive "JAPAN" Display Typography -->
+<div class="relative z-10 w-full text-center mt-12 md:mt-16 pointer-events-none select-none">
+<h1 class="hero-japan-title text-7xl sm:text-9xl md:text-[13rem] lg:text-[16rem] font-black text-white/70 uppercase leading-none tracking-widest font-display">
+          JAPAN
+        </h1>
+</div>
+<!-- Hero Bottom Content: Feature Cards + Kimono Figure + Action Button -->
+<div class="relative z-20 max-w-7xl mx-auto px-6 w-full mt-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+<!-- 5 Horizontal Micro Glass Cards -->
+<div class="lg:col-span-8 flex flex-wrap sm:flex-nowrap gap-3 pb-4">
+<!-- Card 1 -->
+<div class="flex-1 min-w-[120px] glass-card rounded-2xl overflow-hidden p-2 group hover:border-white/40 transition-all">
+<div class="h-28 rounded-xl overflow-hidden mb-2 relative">
+<img alt="Tokyo Pagoda" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbDmShwJx-KhgaNDr6TVIcKCYqxnlb0dLP8OFDy4yd4zrCiVEVOH1K4XJnEXXrj1VwdBLavx1ScfVT7qBxO84nLyu6steH4fbM7gMcCpIViaW4n98UPQdWLCq9q8_yARyGgAfdXjDn-qIQSCSBKbRnqUKip3gaQUU_bcdTa3arQv8iv4qLhvpe3kOWUnKjBuG7aQFYFhlf_BzuAOuiErI9xQJGkATBGo0RUf4W_QN0StuYEEDLVdzm6Q"/>
+</div>
+<div class="px-1 pb-1">
+<span class="block text-xs font-semibold text-white leading-tight">3 cities</span>
+<span class="block text-[11px] text-slate-400">in Japan</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex-1 min-w-[120px] glass-card rounded-2xl overflow-hidden p-2 group hover:border-white/40 transition-all">
+<div class="h-28 rounded-xl overflow-hidden mb-2 relative">
+<img alt="Japan Nature" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeDfwwLtc9ml8ImTJ93l1J1LavtW6kj0CffFBNQ1CsxK4fw7qSON4lqHFO8ZuhW6d2u08jsO50GBQErWOClDMzUDRNNFXlc-T2NXS9R4jX7fUWzcVwswDwDIX-38XfnkaiaQcW51m1-iitZU19880MGP3GGhfujo6Xln8Cgc1BD1rAPJcEeSz6xgykyFLkApfVQZerEfCcVeznBNjPWhrUQMZK2jKy0_wh35ceIk7Y_nwlwGjNyUYpoQ"/>
+</div>
+<div class="px-1 pb-1">
+<span class="block text-xs font-semibold text-white leading-tight">10 days</span>
+<span class="block text-[11px] text-slate-400">itinerary</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex-1 min-w-[120px] glass-card rounded-2xl overflow-hidden p-2 group hover:border-white/40 transition-all">
+<div class="h-28 rounded-xl overflow-hidden mb-2 relative">
+<img alt="Pagoda Landscape" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARAOrKIO2XkEkEqirNqz50y6I5jDGVTfzIsv0x81cF1aKZmcsPto_kZV7oVN0VmQzyShVRLcYGz3HMoAwLs-KYivNMDuVDayhYiMOJAiuSnLKumwC3J3Jn9yljpqU-OtpqKfCvFfoMC7Uwuy_-bw5i9Jo9CdrPTMKWt2fL_XCuGVEHdAXBJnd9S_q7H0i41N4T5WzQWUdXBcfW02xW61xrh2kRhttPWhq_ozRytCGBSVAOZlpJwohC8w"/>
+</div>
+<div class="px-1 pb-1">
+<span class="block text-xs font-semibold text-white leading-tight">gigabytes</span>
+<span class="block text-[11px] text-slate-400">of photos</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="flex-1 min-w-[120px] glass-card rounded-2xl overflow-hidden p-2 group hover:border-white/40 transition-all">
+<div class="h-28 rounded-xl overflow-hidden mb-2 relative">
+<img alt="Ramen Dining" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWLCXE-W6dhQpRcWeCCy5ih5xUhP04ewQKYWpb-Q0N-a4zKtD0y5M8PN7YKg6YPQRq37PBSPounuW9pO_O8ceJ9b_rFM5fjj-pURdZHi1JQk0ch_IYD8FGicPa0MpCpVQa6BbzscdqajfYxHnb2J3CAtQT9LiZbQULR5WppssTRWoKWacItKBTKBvz0ysUHSWo2K9edkd6YSuB4Br3W1p9IBdycQdMpp2AOEBhW293gjCOObLZu43JtQ"/>
+</div>
+<div class="px-1 pb-1">
+<span class="block text-xs font-semibold text-white leading-tight">eat ramen</span>
+<span class="block text-[11px] text-slate-400">authentic</span>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="flex-1 min-w-[120px] glass-card rounded-2xl overflow-hidden p-2 group hover:border-white/40 transition-all">
+<div class="h-28 rounded-xl overflow-hidden mb-2 relative">
+<img alt="Tokyo Alley vibe" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqKAQ0VBCMzSgp972dq_IZLLKyqEoxQp6ASSxJyxa2kQAYZxYdpEcviDQbK7LK7UYSg71EuGBZ094pGIGQPXZx3mdRySHyKjbS9Atzgqk2kYvT9B0D0klL7TqR9oQM_JdyjrebaX8vcVLhJRYrurfJjFYjfsGH-sC7uuUutrAYWKi9dxlmFfEvCj4IC-ycsH4FNmVV3CqvwA-vhh_heKZ19NdiDgb0ccxr2LLJYyhDarAp0KBFq8arow"/>
+</div>
+<div class="px-1 pb-1">
+<span class="block text-xs font-semibold text-white leading-tight">enjoy</span>
+<span class="block text-[11px] text-slate-400">the vibe</span>
+</div>
+</div>
+</div>
+<!-- Kimono / Tour Hero Right Button Anchor -->
+<div class="lg:col-span-4 flex flex-col items-center lg:items-end justify-end pb-4">
+<a class="w-full sm:w-64 py-3.5 px-8 rounded-full bg-slate-100 hover:bg-white text-slate-950 font-semibold tracking-wider text-xs uppercase text-center shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-0.5" href="#contact">
+              Book
+            </a>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: AboutTourSection -->
+<section class="py-24 bg-charcoal-950 relative border-t border-white/5" data-purpose="about-tour" id="about">
+<div class="max-w-7xl mx-auto px-6">
+<!-- Section Divider & Title -->
+<div class="flex items-center justify-center my-12">
+<div class="h-px bg-white/20 flex-grow max-w-xs md:max-w-md"></div>
+<h2 class="px-6 text-xl md:text-3xl font-display font-medium tracking-[0.2em] text-white uppercase text-center">
+            About The Tour
+          </h2>
+<div class="h-px bg-white/20 flex-grow max-w-xs md:max-w-md"></div>
+</div>
+<!-- 2 Columns: Description & Itinerary Timeline -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mt-16">
+<!-- Left Column: Copywriting -->
+<div class="lg:col-span-5 space-y-16 lg:sticky lg:top-32">
+<div>
+<p class="text-sm md:text-base leading-relaxed text-slate-300">
+                We've planned a simple and convenient 10-day itinerary for your trip to Japan. You'll visit three cities:
+                <strong class="font-semibold text-accent-gold block mt-1">Osaka, Kyoto, and Tokyo.</strong>
+</p>
+</div>
+<div>
+<p class="text-sm md:text-base leading-relaxed text-slate-300">
+                No need to worry about routes, schedules, or finding places — everything is already organized. We'll show you where to go, what to see, and where to eat, so you can simply
+                <strong class="font-semibold text-accent-glow underline decoration-amber-400/50 underline-offset-4">enjoy the journey.</strong>
+</p>
+</div>
+<!-- Quick highlights badge counter -->
+<div class="pt-4 flex items-center gap-6 border-t border-white/10 text-xs tracking-wider text-slate-400">
+<div>
+<span class="block text-2xl font-bold text-white font-display">10</span>
+<span>Days</span>
+</div>
+<div class="h-8 w-px bg-white/10"></div>
+<div>
+<span class="block text-2xl font-bold text-white font-display">3</span>
+<span>Key Cities</span>
+</div>
+<div class="h-8 w-px bg-white/10"></div>
+<div>
+<span class="block text-2xl font-bold text-white font-display">100%</span>
+<span>Curated Care</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Connected Timeline nodes & thumbnails -->
+<div class="lg:col-span-7 relative pl-4 md:pl-8">
+<!-- Vertical Line -->
+<div class="absolute left-6 md:left-8 top-3 bottom-8 w-px timeline-track"></div>
+<div class="space-y-16">
+<!-- Node 1: Osaka -->
+<div class="relative pl-10 md:pl-12 group">
+<!-- Timeline Dot Indicator -->
+<div class="absolute left-[-2px] md:left-0 top-1.5 w-3 h-3 rounded-full bg-white ring-4 ring-charcoal-950 transition-all group-hover:scale-125 group-hover:bg-amber-300"></div>
+<div class="flex items-center gap-3 mb-4">
+<span class="text-xs uppercase tracking-widest text-slate-400">Days 1–3</span>
+<h3 class="text-lg md:text-xl font-display font-semibold text-white tracking-wide">Osaka</h3>
+</div>
+<!-- Osaka Photo Collages -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+<div class="aspect-square rounded-xl overflow-hidden border border-white/10 glass-card">
+<img alt="Osaka Castle Skyline" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKc11OzeCDGRFI4xA0FlA-1atuu_SpZPkjvVrHZGHD9d3xExwNNMHuibssJ_sNTuAw56rlGVnnSRgp13rOXkqcROtXe_FSJmi2HOgjE3_YtvH-1poBEmlRMF9tJJ5kFE7zwKD-y-IU01g0s0-Ay42Sr5_BgMWHY5M9FcNsyj-M45i92y54YHwNu5og5krawRFsBqBWij9WCKQo_sQbgYYitbMywmW6o-mwCJM0XvffnqA_SeG4YjnJUQ"/>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden border border-white/10 glass-card sm:translate-y-4">
+<img alt="Osaka Cherry Blossoms" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCRDnu88uyyQj85REBLiXIjI8MRYrjFIIX99nx9ZDrWPKrlb_99z8vlROQi_WH1ToLZRSaAYpquzHCPg0qaMe37EfYd3HNT_g114IUYoPCVrmm0EQ23r44WEcBs1SBub3hKLRfBmgWIj_1iG_kHeN04ZUp_8fS9oiPyMyQcZ4Z6lc1VbCtH_mkg7xwmK8pmaG1y7jLUZOVu6ZlpvejTDogKPb1lS6shpqNE-7cpSD0IaIyHF4F_D0BWw"/>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden border border-white/10 glass-card hidden sm:block">
+<img alt="Osaka Lanterns Street" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC7lhm5QymkGQuwJn0zpgqVqyYcrW5f6GwDerB_EYuUbZE56R1PaOTW95US4aN-CRBzyClNDGRSOa9IsovGK5GQqrwZyrGCJAwdXvFy9qPJWx7CdRozVseZKisOUnM15MX-dgp_vruL897JnMpJ7MqXXeLi6VlbBhRJTbZt0OubtxYemue8q0WauKnwnlnhIwb1v-Tw86eifhIUEeUBlGmo6_S_bNPgCeEK3nO0RlxBCqlTcYuWIih8Q"/>
+</div>
+</div>
+</div>
+<!-- Node 2: Kyoto -->
+<div class="relative pl-10 md:pl-12 group">
+<!-- Timeline Dot Indicator -->
+<div class="absolute left-[-2px] md:left-0 top-1.5 w-3 h-3 rounded-full bg-white ring-4 ring-charcoal-950 transition-all group-hover:scale-125 group-hover:bg-amber-300"></div>
+<div class="flex items-center gap-3 mb-4">
+<span class="text-xs uppercase tracking-widest text-slate-400">Days 4–6</span>
+<h3 class="text-lg md:text-xl font-display font-semibold text-white tracking-wide">Kyoto</h3>
+</div>
+<!-- Kyoto Photo Collages -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+<div class="aspect-square rounded-xl overflow-hidden border border-white/10 glass-card">
+<img alt="Traditional Kyoto Pagoda" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOOZaYu7Q4vJT3K5UqYt_BOJzS0Tk9r_dG_tbHtM1283wQaTkotwcYcfIF90P6uPs90llA0JyC1dpMHkBmq22Xw9TD1vjJR0XCDr32xYEjMvmm5oADf_xS9zS3uMmfG2pXtMjxckSU2hccxUh5JOcFYt3oXLsUQrr7hlOQFkqgsh8OfEyBs0K8lMxYACVLuFO2HZaiLgUuUH10qgH8rHxjiG--b2veVFUHIQzQ6QY1gS7ALbfcgU74hA"/>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden border border-white/10 glass-card">
+<img alt="Kyoto Gion District" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATWWdFu5YnN5oOqujVKshzcyINYRE0XX9UVLOeUWuPMCF6DtH2xZpJF6p4cJg5kfARkkO3lZ4J9PpdE7IhZBocAMA4CU5Wek_Utqm1txth7XryDbh0HmuV6qC3zyhSZX4gJ5fx2AJKf6-7nH7GrzW3CJWX-3BYOrJ_PrAXHZWppVtmPqIWTIajx4vi4w0PY4zaX6cxael5BdamTD3bvuU5rnYq7bhU7vK9EjQ74v1qp3Wh14S9JY0AZQ"/>
+</div>
+</div>
+</div>
+<!-- Node 3: Tokyo -->
+<div class="relative pl-10 md:pl-12 group">
+<!-- Timeline Dot Indicator -->
+<div class="absolute left-[-2px] md:left-0 top-1.5 w-3 h-3 rounded-full bg-white ring-4 ring-charcoal-950 transition-all group-hover:scale-125 group-hover:bg-amber-300"></div>
+<div class="flex items-center gap-3 mb-4">
+<span class="text-xs uppercase tracking-widest text-slate-400">Days 7–10</span>
+<h3 class="text-lg md:text-xl font-display font-semibold text-white tracking-wide">Tokyo</h3>
+</div>
+<!-- Tokyo Photo Collages -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+<div class="aspect-square rounded-xl overflow-hidden border border-white/10 glass-card">
+<img alt="Tokyo Shinjuku Lights" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrW99WUdWNyNf5eb6i1G6qkoMaZvEZ-TdaQi5nppff4FzyQ5jlInJDwUojH7N3JNi4gWk1IJCj_pjLIr8db4wXZlKjp_LvC9yfcUOYbtK2hAI3hluFwr3P3qQXVBaiiAibnsJDRSkDVttssyHbqcIKY32HP8qB6FRTjVRVkozRVoBoUz0WoSjsVvSLfkq3pwkz4fuHDvgLCx4V4ydNBL2VjfiYRxvLadWUHEJEFpTlx7cJOSr_sftOSg"/>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden border border-white/10 glass-card">
+<img alt="Tokyo Torii Gate Shrine" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbPd2z726yXM8YYBCgOkeRbhdaVbLTZioBnXFy-_EZRWIe1kxM8UllwEKtjs2dKzfOyKYsirNTQ4GfaB3odln1Xj8EpHQ6tVTsZ2x3isTZD8z9Z0ama9WAIsNzHhgdRe8z-6VMDRgpFX1nReOAlAAkPcUxeCnaHWUv09nQ04ellDFWd-gToThOIre11Hz_Y9j-89JGw-FJQX0V-0s1_wgOINzB-hckXF-xcnP4D4E04CoLar98EYWuqQ"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: AboutTourSection -->
+<!-- BEGIN: WhatIsIncludedSection -->
+<section class="py-24 bg-charcoal-950 relative border-t border-white/5" data-purpose="tour-inclusions" id="included">
+<div class="max-w-7xl mx-auto px-6">
+<!-- Section Divider & Title -->
+<div class="flex items-center justify-center my-8">
+<div class="h-px bg-white/20 flex-grow max-w-xs md:max-w-md"></div>
+<h2 class="px-6 text-xl md:text-3xl font-display font-medium tracking-[0.2em] text-white uppercase text-center">
+            What's Included
+          </h2>
+<div class="h-px bg-white/20 flex-grow max-w-xs md:max-w-md"></div>
+</div>
+<!-- 4 Column Inclusion Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
+<!-- Card 1: Guides -->
+<div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between" data-purpose="inclusion-item">
+<div>
+<div class="w-12 h-12 rounded-xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-accent-gold mb-5">
+<i class="fa-solid fa-compass text-lg"></i>
+</div>
+<h3 class="text-base font-semibold text-white font-display mb-2">Guides</h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+                2 awesome guides who know everything about Japan!
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-white/5 flex items-center text-[11px] text-slate-500 uppercase tracking-wider">
+<span>English &amp; Russian Speaking</span>
+</div>
+</div>
+<!-- Card 2: Flights -->
+<div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between" data-purpose="inclusion-item">
+<div>
+<div class="w-12 h-12 rounded-xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-accent-gold mb-5">
+<i class="fa-solid fa-plane-departure text-lg"></i>
+</div>
+<h3 class="text-base font-semibold text-white font-display mb-2">Flights</h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+<span class="block text-slate-300 font-medium">Routes:</span>
+                Moscow — Osaka<br/>
+                Tokyo — Moscow
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-white/5 flex items-center text-[11px] text-slate-500 uppercase tracking-wider">
+<span>Luggage Included</span>
+</div>
+</div>
+<!-- Card 3: Transfers -->
+<div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between" data-purpose="inclusion-item">
+<div>
+<div class="w-12 h-12 rounded-xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-accent-gold mb-5">
+<i class="fa-solid fa-van-shuttle text-lg"></i>
+</div>
+<h3 class="text-base font-semibold text-white font-display mb-2">Transfers</h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+                From the airport to the hotels and private intercity express train passes.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-white/5 flex items-center text-[11px] text-slate-500 uppercase tracking-wider">
+<span>Shinkansen Bullet Train</span>
+</div>
+</div>
+<!-- Card 4: Hotels -->
+<div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between" data-purpose="inclusion-item">
+<div>
+<div class="w-12 h-12 rounded-xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-accent-gold mb-5">
+<i class="fa-solid fa-hotel text-lg"></i>
+</div>
+<h3 class="text-base font-semibold text-white font-display mb-2">Hotels</h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+                Comfortable accommodation 2 people per room (breakfasts included).
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-white/5 flex items-center text-[11px] text-slate-500 uppercase tracking-wider">
+<span>4-Star Rated &amp; Ryokan</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: WhatIsIncludedSection -->
+<!-- BEGIN: ContactSection -->
+<section class="relative py-28 overflow-hidden min-h-[750px] flex items-center" data-purpose="tour-inquiry-form" id="contact">
+<!-- Background Image: Chureito Pagoda, cherry blossoms, and Fuji sunset -->
+<div class="absolute inset-0 z-0">
+<img alt="Chureito Pagoda, cherry blossoms and Mount Fuji" class="w-full h-full object-cover object-center filter brightness-[0.7] contrast-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK3BQsErThtptl5E-ouSs3LgT8gbnzBClDRzV0IUniAoekty9QXHE4OkpmgzsZprM38SJ38gFICIta4g-KmG3CTnF8x3jrxut2mg0BdG4RRntrmmnTicwMI-aV_02izKsAI-gYqB19mPXo3ASkP5qFLCBqNJH6WQVP9k19s1gDhlGm8QGSwouTClVBKg0UUf8xRbqD54_7b7dAkhtxGLKMqg_ZUWlQQesH4_HUt2EiSGR_p60WtFv61w"/>
+<!-- Dark ambient gradient overlays for optimal text readability -->
+<div class="absolute inset-0 bg-gradient-to-r from-charcoal-950/90 via-charcoal-950/70 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-transparent to-charcoal-950/60"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Glassmorphic Booking Form Card -->
+<div class="lg:col-span-6 max-w-lg glass-card rounded-3xl p-8 sm:p-10 shadow-2xl border border-white/20">
+<h3 class="text-2xl sm:text-3xl font-display font-medium text-white leading-snug">
+              Want to join us,<br/>but still have questions?
+            </h3>
+<p class="text-xs uppercase tracking-wider text-slate-300 mt-3 font-medium">
+              Leave a request
+            </p>
+<form class="mt-8 space-y-6" id="lead-form" onsubmit="event.preventDefault(); alert('Thank you! Your request has been received.');">
+<!-- Name Input -->
+<div>
+<label class="sr-only" for="name">Your name</label>
+<input class="w-full bg-transparent border-0 border-b border-white/30 text-white placeholder-slate-400 focus:outline-none focus:ring-0 focus:border-white px-0 py-2.5 text-sm transition-colors" id="name" name="name" placeholder="Your name" required="" type="text"/>
+</div>
+<!-- Phone Input -->
+<div>
+<label class="sr-only" for="phone">Phone number</label>
+<input class="w-full bg-transparent border-0 border-b border-white/30 text-white placeholder-slate-400 focus:outline-none focus:ring-0 focus:border-white px-0 py-2.5 text-sm transition-colors" id="phone" name="phone" placeholder="Phone number" required="" type="tel"/>
+</div>
+<!-- Comment Input -->
+<div>
+<label class="sr-only" for="comment">Comment</label>
+<textarea class="w-full bg-transparent border-0 border-b border-white/30 text-white placeholder-slate-400 focus:outline-none focus:ring-0 focus:border-white px-0 py-2.5 text-sm resize-none transition-colors" id="comment" name="comment" placeholder="Comment" rows="2"></textarea>
+</div>
+<!-- Submit Button -->
+<div class="pt-4">
+<button class="w-full py-3.5 px-6 rounded-full bg-white hover:bg-slate-100 text-charcoal-950 font-semibold text-xs tracking-wider uppercase transition-all duration-300 transform active:scale-95 shadow-lg" type="submit">
+                  Send
+                </button>
+</div>
+</form>
+</div>
+<!-- Right Column Spacer & Mobile Social Links -->
+<div class="lg:col-span-6 flex flex-col justify-end items-end pr-4">
+<div class="flex items-center gap-4 text-white/70">
+<a class="w-10 h-10 rounded-full border border-white/20 hover:border-white hover:text-white flex items-center justify-center text-sm backdrop-blur-md bg-black/40 transition-all" href="#">
+<i class="fa-brands fa-instagram"></i>
+</a>
+<a class="w-10 h-10 rounded-full border border-white/20 hover:border-white hover:text-white flex items-center justify-center text-sm backdrop-blur-md bg-black/40 transition-all" href="#">
+<i class="fa-brands fa-telegram"></i>
+</a>
+<a class="w-10 h-10 rounded-full border border-white/20 hover:border-white hover:text-white flex items-center justify-center text-sm backdrop-blur-md bg-black/40 transition-all" href="#">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ContactSection -->
+</main>
+<!-- BEGIN: Footer -->
+<footer class="bg-charcoal-950 border-t border-white/10 py-8 relative z-20" data-purpose="site-footer">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+<!-- Logo brand -->
+<a class="flex items-center gap-3 text-white tracking-widest uppercase font-semibold text-xs md:text-sm" href="#">
+<span class="w-7 h-7 rounded-full border border-white/30 flex items-center justify-center text-white/90">
+<i class="fa-solid fa-globe text-xs"></i>
+</span>
+<span class="tracking-[0.2em] font-medium">JAPAN TOURS</span>
+</a>
+<!-- Footer navigation links -->
+<nav class="flex items-center space-x-8 text-xs tracking-wider uppercase font-medium text-slate-400">
+<a class="hover:text-white transition-colors duration-200" href="#about">About</a>
+<a class="hover:text-white transition-colors duration-200" href="#included">Included</a>
+<a class="hover:text-white transition-colors duration-200" href="#contact">Contacts</a>
+</nav>
+<!-- Bottom Book Button -->
+<div>
+<a class="px-6 py-1.5 rounded-full border border-white/50 hover:bg-white hover:text-black transition-all duration-300 text-xs tracking-wider uppercase font-medium" href="#contact">
+          Book
+        </a>
+</div>
+</div>
+</footer>
+<!-- END: Footer -->
+</body></html>
